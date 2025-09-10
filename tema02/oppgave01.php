@@ -1,8 +1,7 @@
 <?php
 $tall1=$_POST["tall1"];
 $tall2=$_POST["tall2"];
-
-if (isset($post ["fortsett"]))
+if (isset($POST ["fortsett"]))
 
     $svar =$_POST["svar"];
 if ($svar ==9)
