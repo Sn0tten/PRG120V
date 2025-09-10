@@ -21,7 +21,7 @@ else if ($svar == "n" && $svar2 == "j")
 {
     print ("du er ikke gift og har barn");
 }
-else ($svar == "n" && $svar2 == "n")
+else 
 {
     print ("du er ikke gift og har ikke barn");
 }
