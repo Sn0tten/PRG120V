@@ -1,7 +1,6 @@
 <?php
 $tall1=$_POST["tall1"];
 $tall2=$_POST["tall2"];
-$svar=$_POST["svar"];
 
 if (isset($post ["fortsett"]))
 
