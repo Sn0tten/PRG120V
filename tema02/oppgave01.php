@@ -1,15 +1,15 @@
-<?php
-$tall1=$_POST["tall1"];
-$tall2=$_POST["tall2"];
-if (isset($POST ["fortsett"]))
-
-    $svar =$_POST["svar"];
-if ($svar ==9)
+<?php /* Oppgave 1 */
+/*
+/* Programmet mottar fra et HTML-skjema et svar på spørsmålet "Hva er 3 ganger 3 ?"
+/* Programmet sjekker om svaret er riktig og skriver ut en melding avhengig av om svaret er riktig eller feil
+*/
+$svar=$_POST ["svar"];
+if ($svar == 9) /* avgitt svar er riktig */
 {
-    print("Riktig. 3 ganger 3 er 9");
+print("Riktig. 3 ganger 3 er 9 <br/>");
 }
-else
+else /* avgitt svar er feil */
 {
-    print("Feil. 3 ganger 3 er ikke $svar");
+print("Feil. 3 ganger 3 er ikke $svar. 3 ganger 3 er 9 <br/>");
 }
 ?>
