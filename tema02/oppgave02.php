@@ -7,14 +7,14 @@ print("Du må svare på spørsmålet! <br/>");
 }
 else if ($svar == "j") 
 {
-    print ("det er svart j på spørsmålet")
+    print ("det er svart j på spørsmålet");
 }
 else if ($svar == "n")
 {
-    print ("det er svart n på spørsmålet")
+    print ("det er svart n på spørsmålet");
 }
 else 
 {
-    print ("du må svare j eller n på spørsmålet")
+    print ("du må svare j eller n på spørsmålet");
 }
 ?>
