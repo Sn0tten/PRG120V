@@ -1,7 +1,7 @@
 <?php
 $svar=$_POST ["svar"];
 $svar1=$_POST ["svar1"];
-if (!$svar || !$svar2) 
+if (!$svar || !$svar1) 
 {
 print("du har ikke svart på spørsmålene. <br/>");
 }
