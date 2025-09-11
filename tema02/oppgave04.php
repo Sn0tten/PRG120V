@@ -5,19 +5,19 @@ if (!$svar || !$svar1)
 {
 print("du har ikke svart på spørsmålene. <br/>");
 }
-else if ($svar == "j" && $svar1 == "j")
+else if ($svar == "ja" && $svar1 == "ja")
 {
     print ("du er chadlite og er blackpilled");
     }
-else if ($svar == "n" && $svar1 == "n")
+else if ($svar == "nei" && $svar1 == "nei")
 {
     print ("du er normie og er whitepilled");
 }
-else if ($svar == "j" && $svar1 == "n")
+else if ($svar == "ja" && $svar1 == "nei")
 {
     print ("du er chadlite og er whitepilled");
 }
-else if ($svar == "n" && $svar1 == "j")
+else if ($svar == "nei" && $svar1 == "ja")
 {
     print ("du er sub-3 incel og er blackpilled");
 }
