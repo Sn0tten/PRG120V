@@ -1,19 +1,17 @@
 <?php
-// Første linje: 1 til 10
-for ($i = 1; $i <= 10; $i++) {
-    echo $i . " ";
+for $tall =1;$tall<=10;$tall++
+{
+    print("$tall"): /* tallene fra 1 til 10 */
 }
-echo "\n";
-
-// Andre linje: 11 til 20
-for ($i = 11; $i <= 20; $i++) {
-    echo $i . " ";
+print ("<br/>");
+for ($tall =11;$tall<=20;$tall++)
+{
+    print("$tall"): /* tallene fra 11 til 20 */
 }
-echo "\n";
-
-// Tredje linje: 21 til 30
-for ($i = 21; $i <= 30; $i++) {
-    echo $i . " ";
+print ("<br/>");
+for ($tall =21;$tall>=30;$tall++)
+{
+    print("$tall"): /* tallene fra 21 til 30 */
 }
-echo "\n";
+print ("<br/>");
 ?>
