@@ -1,5 +1,5 @@
 <?php
-for $tall =1;$tall<=10;$tall++
+for ($tall =1;$tall<=10;$tall++)
 {
     print("$tall"): /* tallene fra 1 til 10 */
 }
