@@ -1,7 +1,7 @@
 <?php
 for ($tall =1;$tall<=10;$tall++)
 {
-    print("$tall"): /* tallene fra 1 til 10 */
+    print("$tall"); /* tallene fra 1 til 10 */
 }
 print ("<br/>");
 for ($tall =11;$tall<=20;$tall++)
