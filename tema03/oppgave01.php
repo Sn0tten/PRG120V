@@ -12,4 +12,8 @@ while ($tall1 <= 10)
 startverdi: $tall1=1; 
 betingelse: $tall1 <= 10;
 øking: $tall1++;
+/* $navn=array(geir", "marius", "Tove") */
 ?>
+
+
+
