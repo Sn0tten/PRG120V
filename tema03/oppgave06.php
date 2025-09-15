@@ -1,14 +1,13 @@
 <?php
-$angitt_tall=$_POST["angitt_tall"];
-if ($angitt_tall <=0)
-{
-    print("tallet er ikke positivt");
-}
-else
-{
-    for ($tall=1;$tall<=$angitt_tall;$tall++)
-    {
-        print("$tall <br/>");
+if (isset($_POST["tall"])) {
+    $tall = (int) $_POST["tall"]; // hent og konverter til heltall
+
+    echo "<h3>Tallene fra 1 til $tall:</h3>";
+
+    for ($i = 1; $i <= $tall; $i++) {
+        echo $i . " ";
     }
+} else {
+    echo "Ingen tall mottatt.";
 }
 ?>
