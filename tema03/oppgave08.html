@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="no"> 
+<html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <title>Oppgave 8</title>
+  <meta charset="UTF-8">
+  <title>Oppgave 8</title>
 </head>
 <body>
-    <h3>Oppgave 8</h3>
-    <form method="post" action="tema03/oppgave08.php" id="oppgave8" name="oppgave8">
-        Skriv ut tallene fra 1 til det angitte tallet:
-        <input type="number" name="tall" min="1" max="100" required />
-        <br/><br/>
-        <input type="submit" value="Vis tall" />
-    </form>
+  <h3>Oppgave 8</h3>
+
+  <form method="post" action="oppgave08.php">
+    Tall 1: <input type="number" name="tall[]" required><br>
+    Tall 2: <input type="number" name="tall[]" required><br>
+    Tall 3: <input type="number" name="tall[]" required><br>
+    Tall 4: <input type="number" name="tall[]" required><br>
+    Tall 5: <input type="number" name="tall[]" required><br><br>
+    <input type="submit" value="Vis tall">
+    <input type="reset" value="Nullstill">
+  </form>
 </body>
 </html>

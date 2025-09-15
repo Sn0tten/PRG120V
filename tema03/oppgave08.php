@@ -1,20 +1,12 @@
 <?php
-if (isset($_POST["tall"]))
-{
-    tall = (int) $_POST["tall"]; // hent og konverter til heltall
-    echo "<h3>Tallene fra 1 til $tall:</h3>";
-    for ($i = 1; $i <= $tall; $i++) {
-        echo $i . " ";
-}   
-}
 if (isset($_POST["tall"])) {
-    $tall = (int) $_POST["tall"]; // hent og konverter til heltall
+    $tall = $_POST["tall"]; // lagre tallene i et array
 
-    echo "<h3>Tallene fra 1 til $tall:</h3>";
-
-    for ($i = 1; $i <= $tall; $i--) {
-        echo $i . " ";
-    }
+    echo "<h3>Resultat:</h3>";
+    // utskrift i samme rekkefølge
+    echo implode(" ", $tall) . "<br>";
+    // utskrift i motsatt rekkefølge
+    echo implode(" ", array_reverse($tall));
 } else {
     echo "Ingen tall mottatt.";
 }
