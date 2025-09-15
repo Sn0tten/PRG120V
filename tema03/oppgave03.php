@@ -1,13 +1,19 @@
 <?php
-for ($i=1; $i <= 10; $i++) 
-{ 
-    print ("$i <br/>");
+// Første linje: 1 til 10
+for ($i = 1; $i <= 10; $i++) {
+    echo $i . " ";
 }
+echo "\n";
+
+// Andre linje: 11 til 20
 for ($i = 11; $i <= 20; $i++) {
-    echo $i . " har kvadratet " . ($i * $i) . "<br>";
+    echo $i . " ";
 }
-for ($i = 21 ; $i <= 30; $i++) {
-    echo $i . " har kuben " . ($i * $i * $i) . "<br>";
+echo "\n";
+
+// Tredje linje: 21 til 30
+for ($i = 21; $i <= 30; $i++) {
+    echo $i . " ";
 }
+echo "\n";
 ?>
--< --- IGNORE ---
