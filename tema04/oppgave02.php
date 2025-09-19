@@ -8,10 +8,10 @@ if (!$klassekode) //klassekode er ikke fylt ut//
     $lovligklassekode = false;
     echo "Klassekode er ikke fylt ut <br>";
 }
-else if (strlen($klassekode) != 8) //klassekode har ikke 8  tegn//
+else if (strlen($klassekode) != 3) //klassekode har ikke 8  tegn//
 {
     $lovligklassekode = false;
-    echo "Klassekode må ha 8 tegn <br>";
+    echo "Klassekode må ha 3 tegn <br>";
 }
 else if (!ctype_alnum($klassekode)) //klassekode er ikke alfanumerisk//
 {
