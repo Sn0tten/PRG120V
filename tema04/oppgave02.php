@@ -8,17 +8,34 @@ if (!$klassekode) //klassekode er ikke fylt ut//
     $lovligklassekode = false;
     echo "Klassekode er ikke fylt ut <br>";
 }
-else if (strlen($klassekode) != 3) //klassekode har ikke 8  tegn//
+else if (strlen($klassekode) != 8) //klassekode har ikke 3 tegn//
 {
-    $lovligklassekode = false;
-    echo "Klassekode må ha 3 tegn <br>";
+    $lovligKlassekode=false;
+    echo "klassekode består ikke av 3 tegn <br>";
 }
-else if (!ctype_alnum($klassekode)) //klassekode er ikke alfanumerisk//
+else
 {
-    $lovligklassekode = false;
-    echo "Klassekode må være alfanumerisk <br>";
+    $tegn1=$klassekode[0];
+    $tegn2=$klassekode[1];
+    $tegn3=$klassekode[2];
+   if(!ctype_alpha($tegn1)) //tegn 1 er ikke en bokstav//
+   {
+    $lovligklassekode=false;
+    echo "Tegn 1 må være en bokstav <br>";
+   }
+   if(!ctype_alpha($tegn2)) //tegn 2 er ikke en bokstav//
+   {
+    $lovligklassekode=false;
+    echo "Tegn 2 må være en bokstav <br>";
+   }
+   if(!ctype_alpha($tegn3)) //tegn 3 er ikke et siffer//
+   {
+    $lovligKlassekode=false;
+    echo "siste tegn er ikke et siffer <br>";   
+   }
 }
-if ($lovligklassekode) {
+if ($lovligKlassekode) //klasekode er korrekt fylt ut//
+{
     echo "Klassekode er $klassekode <br>";
 }
 ?>
