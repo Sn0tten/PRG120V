@@ -5,7 +5,7 @@
 ?>
 <script src="funskjoner.js"></script>
 <h3>Slett emne </h3>
-<form method="post" action="" id="slettEmneSkjema" name="slettEmneSkjema" onsubmit="bekreft()">
+<form method="post" action="" id="slettEmneSkjema" name="slettEmneSkjema" onsubmit="return bekreft()">
   emnekode <input type="text" id="emnekode" name="emnekode" required /> <br/>
   <input type="submit" value="Slett emne" id="slettEmneKnapp" name="slettEmneKnapp" /> 
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
