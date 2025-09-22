@@ -5,7 +5,7 @@
 ?>
 <script src="funskjoner.js"></script>
 <h3>Endre studium </h3>
-<form method="post" action="" id="endreStudiumSkjema" name="endreStudiumSkjema" onsubmit="bekreft()">
+<form method="post" action="" id="endreStudiumSkjema" name="endreStudiumSkjema" onsubmit="()">
   studiumkode <input type="text" id="studiumkode" name="studiumkode"        required /> <br/>
   nytt studium <input type="text" id="studium" name="studium" required /> <br/>
   <input type="submit" value="Endre studium" id="endreStudiumKnapp" name="endreStudiumKnapp" /> 
