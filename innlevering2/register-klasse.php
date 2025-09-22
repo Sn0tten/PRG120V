@@ -1,5 +1,5 @@
 <?php
-include("key.php");
+include("db-tilkobling.php");
 
 try {
 
