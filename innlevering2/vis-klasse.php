@@ -16,10 +16,10 @@
         {
         $rad=mysqli_fetch_array($sqlResultat); 
         $klassekode=$rad["klassekode"];
-        $klassenavn=$rad["klassenavn"];
+        $klasssenavn=$rad["klasssenavn"];
         $studiumkode=$rad["studiumkode"];
         
-        print ("<tr><td>$klassekode</td><td>$klassenavn</td><td>$studiumkode</td></tr>");
+        print ("<tr><td>$klassekode</td><td>$klasssenavn</td><td>$studiumkode</td></tr>");
         }
     print ("</table>");
 ?>
