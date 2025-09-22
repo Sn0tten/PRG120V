@@ -1,5 +1,5 @@
 <?php
-include("db-tilkobling.php");
+include("key.php");
 
 try {
 
@@ -9,17 +9,13 @@ try {
     $klassekode = $_POST["data4"];
 
 
+    $sqlSetning1 = "UPDATE student SET fornavn='$fornavn' WHERE brukernavn='$brukernavn';";
+    $sqlSetning2 = "UPDATE student SET etternavn='$etternavn' WHERE brukernavn='$brukernavn';";
+    $sqlSetning3 = "UPDATE student SET klassekode='$klassekode' WHERE brukernavn='$brukernavn';";
 
-    $sqlSetning="SELECT * FROM student WHERE brukernavn='$brukernavn';";
-    $sqlResultat=mysqli_query($db,$sqlSetning) or die ("err");
-    $antallRader=mysqli_num_rows($sqlResultat);
-    if ($antallRader != 0){print ("Brukeren er registrert fra før");}
-    else {
-    $sqlSetning="INSERT INTO student (brukernavn,fornavn,etternavn,klassekode)
-    VALUES('$brukernavn','$fornavn','$etternavn','$klassekode');";
-    mysqli_query($db,$sqlSetning) or die ("err");
-    }
-
+    mysqli_query($db,$sqlSetning1) or die ("err");
+    mysqli_query($db,$sqlSetning2) or die ("err");
+    mysqli_query($db,$sqlSetning3) or die ("err");
 } catch (Exception $e) {
     echo '<h2>Den oppgitte informasjonen passet ikke med kriteriene:</h2>';
     echo '<b>Dette er hva gikk galt: </b><i>' . $e->getMessage() . '</i>';
@@ -33,7 +29,7 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nyBruker.php</title>
+    <title>redigerBruker.php</title>
 </head>
 <body>
     <script>
