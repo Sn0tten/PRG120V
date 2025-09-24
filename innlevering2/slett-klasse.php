@@ -3,7 +3,7 @@
 /*  Programmet sletter data (klasse) i databasen
 */
 ?>
-<script src="funskjoner.js"></script>
+<script src="funksjoner.js"></script>
 <h3>Slett klasse </h3>
 <form method="post" action="" id="slettKlasseSkjema" name="slettKlasseSkjema" onsubmit="return bekreft()">
   klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>

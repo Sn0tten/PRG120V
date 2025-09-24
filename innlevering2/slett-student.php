@@ -3,7 +3,7 @@
 /*  Programmet sletter data (student) i databasen
 */
 ?>
-<script src="funskjoner.js"></script>
+<script src="funksjoner.js"></script>
 <h3>Slett student </h3>
 <form method="post" action="" id="slettStudentSkjema" name="slettStudentSkjema" onsubmit="return bekreft()">
   brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
