@@ -6,22 +6,22 @@
 <script src="funskjoner.js"></script>
 <h3>Slett student </h3>
 <form method="post" action="" id="slettStudentSkjema" name="slettStudentSkjema" onsubmit="return bekreft()">
-  brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
+  studentnr <input type="text" id="studentnr" name="studentnr" required /> <br/>
   <input type="submit" value="Slett student" id="slettStudentKnapp" name="slettStudentKnapp" /> 
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
 <?php 
   if (isset($_POST ["slettStudentKnapp"]))
     {
-      $brukernavn=$_POST ["brukernavn"];
-        if (!$brukernavn)
+      $studentnr=$_POST ["studentnr"];
+        if (!$studentnr)
             {
-            print ("brukernavn m&aring; fylles ut");
+            print ("studentnr m&aring; fylles ut");
             }
         else
             {
             include("db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
-                $sqlSetning="SELECT * FROM student WHERE brukernavn='$brukernavn';";
+                $sqlSetning="SELECT * FROM student WHERE studentnr='$studentnr';";
                 $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
                 $antallRader=mysqli_num_rows($sqlResultat);
                 if ($antallRader==0)  /* studenten er ikke registrert */
@@ -30,10 +30,10 @@
                     }
                 else
                     {
-                    $sqlSetning="DELETE FROM student WHERE brukernavnr='$brukernavn';";
+                    $sqlSetning="DELETE FROM student WHERE studentnr='$studentnr';";
                     mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
                     /* SQL-setning sendt til database-serveren */
-                    print ("F&oslash;lgende student er n&aring; slettet: $brukernavn"); 
+                    print ("F&oslash;lgende student er n&aring; slettet: $studentnr"); 
                     }
             }
     }
