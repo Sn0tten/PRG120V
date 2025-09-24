@@ -1,7 +1,6 @@
-<?php /* registrer studenter */
-/*
+<?php /* registrer student */
 /*  Programmet lager et html-skjema for å registrere en student
-/*  Programmet registrerer data (studentnr, navn, klassekode) i databasen
+/*  Programmet registrerer data (brukernavn, fornavn, etternavn, klassekode og passord) i databasen
 */
 ?>
 <h3>Registrer student </h3>
@@ -10,6 +9,7 @@
   fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
   etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
   klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
+  passord <input type="text" id="passord" name="passord" required /> <br/>
   <input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" /> 
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
@@ -20,10 +20,10 @@
         $fornavn=$_POST ["fornavn"];
         $etternavn=$_POST ["etternavn"];
         $klassekode=$_POST ["klassekode"];
-    
-        if (!$brukernavn || !$fornavn || !$etternavn || !$klassekode)
+        $passord=$_POST ["passord"];
+        if (!$brukernavn || !$fornavn || !$etternavn || !$klassekode || !$passord)
             {
-            print ("B&aring;de brukernavn, fornavn, etternavn og klassekode m&aring; fylles ut");
+            print ("Alle felt m&aring; fylles ut");
             }
         else
             {
@@ -39,7 +39,7 @@
                 }
             else
                 {
-                $sqlSetning="INSERT INTO student VALUES('$brukernavn','$fornavn','$etternavn','$klassekode');";
+                $sqlSetning="INSERT INTO student VALUES('$brukernavn','$fornavn','$etternavn','$klassekode','$passord');";
                 mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
                     /* SQL-setning sendt til database-serveren */
     
@@ -48,3 +48,4 @@
             }
         }
 ?>
+--- IGNORE ---

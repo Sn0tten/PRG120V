@@ -26,7 +26,7 @@
                 $antallRader=mysqli_num_rows($sqlResultat);
                 if ($antallRader==0)  /* studenten er ikke registrert */
                     {
-                    print ("studentnummeret er ikke registrert");
+                    print ("brukernavnet er ikke registrert");
                     }
                 else
                     {
