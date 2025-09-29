@@ -38,14 +38,10 @@
                 /* SQL-setning sendt til database-serveren */
               print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode"); 
               } catch (Exception $e) {
-                echo '<h2> kan ikke slette pga det finnes studenter</h2>';
+                echo '<h4> kan ikke slette pga det finnes studenter i den klassen</h4>';
                 
                 //throw $th;
               }
-              $sqlSetning="DELETE FROM klasse WHERE klassekode='$klassekode';";
-              mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
-                /* SQL-setning sendt til database-serveren */
-              print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode"); 
             }
         }
     }
