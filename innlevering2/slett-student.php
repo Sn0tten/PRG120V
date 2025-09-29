@@ -2,6 +2,7 @@
 /*  Programmet lager et html-skjema for å slette en student
 /*  Programmet sletter data (student) i databasen
 */
+include ("funskjoner.js");
 ?>
 <script src="funskjoner.js"></script>
 <h3>Slett student </h3>
