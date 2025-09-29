@@ -12,7 +12,7 @@
     <option value="">velg klassekode</option>
     <?php include("dynamiske-funksjoner.php"); listeboksklassekode(); ?> 
   </select>  <br/>
-  <input type="submit" value="Velg poststed" id="velgklassekodeKnapp" name="velgklassekodeKnapp" /> 
+  <input type="submit" value="Velg klassekode" id="velgklassekodeKnapp" name="velgklassekodeKnapp" /> 
 </form>
 
 <?php
@@ -25,7 +25,7 @@
         }
       else
         {
-           print ("F&oslash;lgende poststed er valgt: $klassekode <br />");
+           print ("F&oslash;lgende klassekode er valgt: $klassekode <br />");
         }	
     }
 ?> 
