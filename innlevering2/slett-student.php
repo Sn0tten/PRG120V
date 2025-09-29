@@ -7,7 +7,10 @@
 <h3>Slett student </h3>
 <form method="post" action="" id="slettStudentSkjema" name="slettStudentSkjema" onsubmit="return bekreft()">
   brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
-  <?php print ("<option value='$brukernavn' selected>$brukernavn</option>"); ?>
+  <?php print ("<select name='brukernavn' id='brukernavn'>");
+        print ("<option value=''> velg student </option>");
+        include("dynamiske-funksjoner.php"); listeboksBrukernavn();
+        print ("</select>"); ?> <br/>
   <input type="submit" value="Slett student" id="slettStudentKnapp" name="slettStudentKnapp" /> 
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
