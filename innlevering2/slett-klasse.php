@@ -4,8 +4,8 @@
 ?>
 <script src="funskjoner.js"></script>
 <h3>Slett klasse </h3>
-<form method="post" action="" id="slettKlasseSkjema" name="slettKlasseSkjema" onsubmit="return bekreft()">
-  klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
+<form method="post"action=" " onsubmit="return bekreft()">
+  klassekode:
   <select name="klassekode" required>
       <option value="">-- Velg klasse --</option>
       <?php include("dynamiske-funksjoner.php"); listeboksklassekode(); ?>
