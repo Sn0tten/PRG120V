@@ -7,16 +7,16 @@
 <h3>Velg poststed</h3>
 
 <form method="post" action="" id="velgklassekode" name="velgklassekode">
-  Poststed 
+  klassekode
   <select name="klassekode" id="klassekode">
     <option value="">velg klassekode</option>
     <?php include("dynamiske-funksjoner.php"); listeboksklassekode(); ?> 
   </select>  <br/>
-  <input type="submit" value="Velg poststed" id="velgPoststedKnapp" name="velgPoststedKnapp" /> 
+  <input type="submit" value="Velg poststed" id="velgklassekodeKnapp" name="velgklassekodeKnapp" /> 
 </form>
 
 <?php
-  if (isset($_POST ["velgPoststedKnapp"]))
+  if (isset($_POST ["velgklassekodeKnapp"]))
     {
       $klassekode=$_POST ["klassekode"];
       if (!$klassekode)
