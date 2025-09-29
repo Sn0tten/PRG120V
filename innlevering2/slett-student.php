@@ -5,12 +5,11 @@
 ?>
 <script src="funskjoner.js"></script>
 <h3>Slett student </h3>
-<form method="post" action="" onsubmit="return bekreft()">
-  brukernavn:
+<form method="post" action=" " onsubmit="return bekreft()">
+  <select name="brukernavn" required>
   <option value="">velg student</option>
       <?php include("dynamiske-funksjoner.php"); listeboksbrukernavn(); ?>
   <input type="submit" value="Slett student" id="slettStudentKnapp" name="slettStudentKnapp" /> 
-  <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
 <?php
  if (isset($_POST ["slettStudentKnapp"]))

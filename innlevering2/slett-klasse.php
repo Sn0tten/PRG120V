@@ -7,10 +7,9 @@
 <form method="post"action=" " onsubmit="return bekreft()">
   klassekode:
   <select name="klassekode" required>
-      <option value="">-- Velg klasse --</option>
+      <option value="">Velg klasse</option>
       <?php include("dynamiske-funksjoner.php"); listeboksklassekode(); ?>
   <input type="submit" value="Slett klasse" id="slettKlasseKnapp" name="slettKlasseKnapp" /> 
-  <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
 <?php 
   if (isset($_POST ["slettKlasseKnapp"]))
