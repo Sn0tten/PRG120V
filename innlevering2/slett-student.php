@@ -6,7 +6,7 @@
 <script src="funskjoner.js"></script>
 <h3>Slett student </h3>
 <form method="post" action="" onsubmit="return bekreft()">
-  brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
+  brukernavn:
   <option value="">velg student</option>
       <?php include("dynamiske-funksjoner.php"); listeboksbrukernavn(); ?>
   <input type="submit" value="Slett student" id="slettStudentKnapp" name="slettStudentKnapp" /> 
