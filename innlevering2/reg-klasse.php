@@ -1,34 +1,46 @@
-<?php include "db-tilkobling.php"; ?>
-
-<!DOCTYPE html>
-<html lang="no">
-<head>
-    <meta charset="UTF-8">
-    <title>Registrer klasse</title>
-</head>
-<body>
-    <h1>Registrer ny klasse</h1>
-    <form method="post">
-        Klassekode: <input type="text" name="klassekode" required><br>
-        Klassenavn: <input type="text" name="klassenavn" required><br>
-        Studiumkode: <input type="text" name="studiumkode" required><br>
-        <input type="submit" value="Registrer">
-    </form>
-
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $kode = $_POST["klassekode"];
-        $navn = $_POST["klassenavn"];
-        $studium = $_POST["studiumkode"];
-
-        $sql = "INSERT INTO klasse (klassekode, klassenavn, studiumkode) 
-                VALUES ('$kode', '$navn', '$studium')";
-        if ($conn->query($sql)) {
-            echo "<p>Klasse registrert!</p>";
-        } else {
-            echo "<p>Feil: " . $conn->error . "</p>";
-        }
+<?php /* registrer klasse */
+/*  Programmet inneholder et HTML-skjema for registrering av en klasse
+/*  Programmet registrerer data (klasse) i databasen
+*/
+?>
+<h3>Registrer klasse</h3>
+<form method="post" action="">
+  Klassekode: <input type="text" id="klassekode" name="klassekode" required /> <br/>
+  klassenavn: <input type="text" id="klassenavn" name="klassenavn" required /> <br/>
+  studiumkode: <input type="text" id="studiumkode" name="studiumkode" required /> <br/>
+  <input type="submit" value="Registrer klasse" id="registrerKlasseKnapp" name="registrerKlasseKnapp" /> 
+  <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
+</form>
+<?php 
+ if (isset($_POST ["registrerKlasseKnapp"]))
+    {
+      $klassekode=$_POST ["klassekode"];
+      $klassenavn=$_POST ["klassenavn"];
+      $studiumkode=$_POST ["studiumkode"];
+        if (!$klassekode || !$klassenavn || !$studiumkode)
+            {
+            print ("Alle felt m&aring; fylles ut");
+            }
+        else
+            {
+            include("db-tilkobling.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
+    
+            $sqlSetning="SELECT * FROM klasse WHERE klassekode='$klassekode';";
+            $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
+            $antallRader=mysqli_num_rows($sqlResultat); 
+    
+            if ($antallRader!=0)  /* klassen er registrert fra f&oslash;r */
+                {
+                print ("Klassen er registrert fra f&oslash;r");
+                }
+            else
+                {
+                $sqlSetning="INSERT INTO klasse VALUES('$klassekode','$klassenavn','$studiumkode');";
+                mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
+                    /* SQL-setning sendt til database-serveren */
+    
+                print ("F&oslash;lgende klasse er n&aring; registrert: $klassekode $klassenavn ($studiumkode)"); 
+                }
+            } 
     }
-    ?>
-</body>
-</html>
+?>
