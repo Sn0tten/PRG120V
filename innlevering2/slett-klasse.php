@@ -7,7 +7,7 @@
 <h3>Slett klasse </h3>
 <form method="post" action="" id="slettKlasseSkjema" name="slettKlasseSkjema" onsubmit="return bekreft()">
   klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
-  <?php print ("<option value='$klassekode' selected>$klassekode</option>"); ?>
+  <?php include ("dynamiske-funskjoner.php"); listeboksklassekode(); ?>
   <br/>
   <input type="submit" value="Slett klasse" id="slettKlasseKnapp" name="slettKlasseKnapp" /> 
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
