@@ -14,7 +14,7 @@ include("db-tilkobling.php");
   Etternavn: <input type="text" id="etternavn" name="etternavn" required /> <br/>
   klassekode: 
   <select name="klassekode" required>
-      <option value="">-- Velg klasse --</option>
+      <option value=""> Velg klasse </option>
       <?php include("dynamiske-funksjoner.php"); listeboksklassekode(); ?>
   </select> <br/>
   
