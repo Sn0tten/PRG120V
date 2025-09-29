@@ -23,3 +23,4 @@
         }
     print ("</table>");
 ?>
+<p><a href="innlevering2/index.html">Tilbake til meny</a></p>

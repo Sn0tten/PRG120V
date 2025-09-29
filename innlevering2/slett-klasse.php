@@ -1,7 +1,6 @@
 <?php /* slett klasse */
 /*  Programmet sletter en klasse fra databasen
 */
-include ("funksjoner.js");
 ?>
 <script src="funksjoner.js"></script>
 <h3>Slett klasse </h3>

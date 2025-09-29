@@ -30,6 +30,6 @@
         }
     }
     ?>
-    <p><a href="index.html">Tilbake til meny</a></p>
+    <p><a href="innlevering2/index.html">Tilbake til meny</a></p>
 </body>
 </html>

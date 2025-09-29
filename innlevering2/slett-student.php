@@ -2,7 +2,6 @@
 /*  Programmet lager et html-skjema for å slette en student
 /*  Programmet sletter data (student) i databasen
 */
-include ("funksjoner.js");
 ?>
 <script src="funksjoner.js"></script>
 <h3>Slett student </h3>
