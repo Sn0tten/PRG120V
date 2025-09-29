@@ -30,4 +30,5 @@
               print ("klassekoden er ikke registrert");
             }
     }
+  }
 ?>
