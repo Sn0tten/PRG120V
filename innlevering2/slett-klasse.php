@@ -29,6 +29,13 @@
             {
               print ("klassekoden er ikke registrert");
             }
+          else
+            {
+              $sqlSetning="DELETE FROM klasse WHERE klassekode='$klassekode';";
+              mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
+                /* SQL-setning sendt til database-serveren */
+              print ("F&oslash;lgende klasse er n&aring; slettet: $klassekode"); 
+            }
+        }
     }
-  }
 ?>
