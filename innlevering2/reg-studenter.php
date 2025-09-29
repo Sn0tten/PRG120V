@@ -9,6 +9,7 @@
   fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
   etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
   klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
+  <?php print ("<option value='$klassekode' selected>$klassekode</option>"); ?>
   <input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" /> 
   <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
 </form>
