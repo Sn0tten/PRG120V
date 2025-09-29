@@ -31,21 +31,3 @@ include "db-tilkobling.php";
     <p><a href="index.html">Tilbake til meny</a></p>
 </body>
 </html>
-<?php
-/* dynamiske-funksjoner.php
-/*  Programmet inneholder funksjoner som lager dynamiske listebokser og sjekkbokser
-/*  Funksjoner:
-/*  - listeboksklassekode()
-/*  - listeboksbrukernavn()
-/*  - sjekkbokserklassekode()
-/*  - sjekkbokserbrukernavn()
-/*  Brukte funksjoner i innlevering2:
-/*  - listeboksklassekode()
-/*  - listeboksbrukernavn()
-/*  - sjekkbokserklassekode()
-/*  Brukte funksjoner i tema05:
-/*  - listeboksklassekode()
-/*  - sjekkbokserbrukernavn()
-/*  - sjekkbokserklassekode()
-/*  - listeboksbrukernavn()
-?>
