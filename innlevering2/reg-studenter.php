@@ -4,7 +4,6 @@
 */
 
 include("db-tilkobling.php"); 
-include("dynamiske-funksjoner.php"); 
 ?> 
 
 <h3>Registrer student</h3>
@@ -16,7 +15,7 @@ include("dynamiske-funksjoner.php");
   klassekode: 
   <select name="klassekode" required>
       <option value="">-- Velg klasse --</option>
-      <?php ListeboksKlassekode(); ?>
+      <?php include("dynamiske-funksjoner.php"); ListeboksKlassekode(); ?>
   </select> <br/>
   
   <input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" /> 
