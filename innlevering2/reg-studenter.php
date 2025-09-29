@@ -13,7 +13,7 @@ include("dynamiske-funksjoner.php");
   Brukernavn: <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
   Fornavn: <input type="text" id="fornavn" name="fornavn" required /> <br/>
   Etternavn: <input type="text" id="etternavn" name="etternavn" required /> <br/>
-  Klassekode: 
+  klassekode: 
   <select name="klassekode" required>
       <option value="">-- Velg klasse --</option>
       <?php listeboksklassekode(); ?>
