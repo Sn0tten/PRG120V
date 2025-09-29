@@ -16,7 +16,7 @@ include("dynamiske-funksjoner.php");
   klassekode: 
   <select name="klassekode" required>
       <option value="">-- Velg klasse --</option>
-      <?php listeboksklassekode(); ?>
+      <?php ListeboksKlassekode(); ?>
   </select> <br/>
   
   <input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" /> 
