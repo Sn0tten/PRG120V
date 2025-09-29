@@ -15,7 +15,7 @@ include("db-tilkobling.php");
   klassekode: 
   <select name="klassekode" required>
       <option value="">-- Velg klasse --</option>
-      <?php include("dynamiske-funksjoner.php"); ListeboksKlassekode(); ?>
+      <?php include("dynamiske-funksjoner.php"); listeboksklassekode(); ?>
   </select> <br/>
   
   <input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" /> 
