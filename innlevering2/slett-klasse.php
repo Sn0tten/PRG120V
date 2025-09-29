@@ -1,11 +1,11 @@
 <?php /* slett klasse */
 /*  Programmet sletter en klasse fra databasen
 */
-include ("funskjoner.js");
+include ("funksjoner.js");
 ?>
-<script src="funskjoner.js"></script>
+<script src="funksjoner.js"></script>
 <h3>Slett klasse </h3>
-<form method="post"action=" " onsubmit="return bekreft()">
+<form method="post" action=" " onsubmit="return bekreft()">
   klassekode:
   <select name="klassekode" required>
       <option value="">Velg klasse</option>
