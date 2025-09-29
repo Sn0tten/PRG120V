@@ -1,55 +1,41 @@
-<?php /* registrer student */
-/*  Programmet lager et html-skjema for å registrere en student
-/*  Programmet registrerer data (brukernavn, fornavn, etternavn, klassekode4) i databasen
-*/
-?>
-<h3>Registrer student</h3>
-<form method="post" action="" id="registrerStudentSkjema" name="registrerStudentSkjema">
-  brukernavn <input type="text" id="brukernavn" name="brukernavn" required /> <br/>
-  fornavn <input type="text" id="fornavn" name="fornavn" required /> <br/>
-  etternavn <input type="text" id="etternavn" name="etternavn" required /> <br/>
-  klassekode <input type="text" id="klassekode" name="klassekode" required /> <br/>
-  <input type="submit" value="Registrer student" id="registrerStudentKnapp" name="registrerStudentKnapp" /> 
-  <input type="reset" value="Nullstill" id="nullstill" name="nullstill" /> <br />
-</form>
+<?php include "db-tilkobling.php"; ?>
+<?php include "dynamiske-funksjoner.php"; ?>
 
-<?php
-if (isset($_POST["registrerStudentKnapp"])) {
-    include("db-tilkobling.php"); // koble til databasen
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrer student</title>
+</head>
+<body>
+    <h1>Registrer ny student</h1>
+    <form method="post">
+        Brukernavn: <input type="text" name="brukernavn" required><br>
+        Fornavn: <input type="text" name="fornavn" required><br>
+        Etternavn: <input type="text" name="etternavn" required><br>
+        Klassekode: 
+        <select name="klassekode" required>
+            <?php listeboksklassekode(); ?>
+        </select><br>
+        <input type="submit" value="Registrer">
+    </form>
 
-    // Trim og escape input
-    $brukernavn = mysqli_real_escape_string($db, trim($_POST["brukernavn"]));
-    $fornavn = mysqli_real_escape_string($db, trim($_POST["fornavn"]));
-    $etternavn = mysqli_real_escape_string($db, trim($_POST["etternavn"]));
-    $klassekode = mysqli_real_escape_string($db, trim($_POST["klassekode"]));
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $brukernavn = $_POST["brukernavn"];
+        $fornavn    = $_POST["fornavn"];
+        $etternavn  = $_POST["etternavn"];
+        $klassekode = $_POST["klassekode"];
 
-    // Sjekk at alle felter er fylt ut
-    if (!$brukernavn || !$fornavn || !$etternavn || !$klassekode) {
-        echo "Både brukernavn, fornavn, etternavn og klassekode må fylles ut";
-        exit;
+        $sql = "INSERT INTO student (brukernavn, fornavn, etternavn, klassekode) 
+                VALUES ('$brukernavn', '$fornavn', '$etternavn', '$klassekode')";
+        if ($conn->query($sql)) {
+            echo "<p>Student registrert!</p>";
+        } else {
+            echo "<p>Feil: " . $conn->error . "</p>";
+        }
     }
-
-    // Sjekk om brukernavn allerede finnes
-    $sql = "SELECT * FROM student WHERE brukernavn='$brukernavn'";
-    $result = mysqli_query($db, $sql) or die("Ikke mulig å hente data fra databasen");
-    if (mysqli_num_rows($result) > 0) {
-        echo "Brukernavnet er registrert fra før";
-        exit;
-    }
-
-    // Sjekk at klassekode eksisterer
-    $sql = "SELECT * FROM klasse WHERE klassekode='$klassekode'";
-    $result = mysqli_query($db, $sql) or die("Ikke mulig å hente data fra klasse-tabellen");
-    if (mysqli_num_rows($result) == 0) {
-        echo "Feil: klassekode '$klassekode' finnes ikke i databasen.";
-        exit;
-    }
-
-    // Sett inn studenten i databasen
-    $sql = "INSERT INTO student (brukernavn, fornavn, etternavn, klassekode) 
-            VALUES ('$brukernavn', '$fornavn', '$etternavn', '$klassekode')";
-    mysqli_query($db, $sql) or die("Ikke mulig å registrere data i databasen");
-
-    echo "Følgende student er nå registrert: $brukernavn $fornavn $etternavn $klassekode";
-}
-?>
+    ?>
+    <p><a href="index.html">Tilbake til meny</a></p>
+</body>
+</html>

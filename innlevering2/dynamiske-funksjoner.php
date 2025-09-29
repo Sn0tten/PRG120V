@@ -1,40 +1,49 @@
-<?php /* dynamiske-funksjoner */
-/* denne filen inneholder følgende dynamiske funksjoner:
-   listebokssklasskode()
-   listebokssbrukernavn()
-   sjekkboksersklassekode()
-*/
-?>
 <?php
-function listeboksbrukernavn ()
-{
-include("db-tilkobling.php"); /* tilkobling til database-server og valg av database utført */
-$sqlSetning="SELECT * FROM studium ORDER BY studiumkode;";
-$sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
-$antallRader=mysqli_num_rows($sqlResultat); /* antall rader i resultatet beregnet */
-for ($r=1;$r<=$antallRader;$r++)
-{
-$rad=mysqli_fetch_array($sqlResultat); /* ny rad hentet fra spørringsresultatet */
-$studiumkode=$rad["studiumkode"];
-$studiumnavn=$rad["studiumnavn"];
-print("<option value='$studiumkode'>$studiumkode $studiumnavn </option>"); /* ny verdi i listeboksen
-laget */
-}
-}
-function listeboksklassekode ()
-{
-include("db-tilkobling.php"); /* tilkobling til database-server og valg av database utført */
-$sqlSetning="SELECT * FROM emne ORDER BY emnekode;";
-$sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
-$antallRader=mysqli_num_rows($sqlResultat); /* antall rader i resultatet beregnet */
-for ($r=1;$r<=$antallRader;$r++)
-{
-$rad=mysqli_fetch_array($sqlResultat); /* ny rad hentet fra spørringsresultatet */
-$emnekode=$rad["emnekode"];
-$emnenavn=$rad["emnenavn"];
-$studiumkode=$rad["studiumkode"];
-print("<option value='$emnekode'>$emnekode $emnenavn </option>"); /* ny verdi i listeboksen laget
+/* dynamiske-funksjoner.php
+   Denne filen inneholder dynamiske funksjoner:
+   - listeboksklassekode()
+   - listeboksbrukernavn()
+   - sjekkbokserklassekode()
 */
+
+function listeboksklassekode()
+{
+    include("db.php"); // tilkobling til database
+    $sql = "SELECT * FROM klasse ORDER BY klassekode;";
+    $resultat = $conn->query($sql) or die("Ikke mulig å hente data fra databasen");
+
+    while ($rad = $resultat->fetch_assoc()) {
+        $klassekode = $rad["klassekode"];
+        $klassenavn = $rad["klassenavn"];
+        $studiumkode = $rad["studiumkode"];
+        print("<option value='$klassekode'>$klassekode - $klassenavn ($studiumkode)</option>");
+    }
 }
+
+function listeboksbrukernavn()
+{
+    include("db.php"); // tilkobling til database
+    $sql = "SELECT * FROM student ORDER BY brukernavn;";
+    $resultat = $conn->query($sql) or die("Ikke mulig å hente data fra databasen");
+
+    while ($rad = $resultat->fetch_assoc()) {
+        $brukernavn = $rad["brukernavn"];
+        $fornavn = $rad["fornavn"];
+        $etternavn = $rad["etternavn"];
+        print("<option value='$brukernavn'>$brukernavn - $fornavn $etternavn</option>");
+    }
+}
+
+function sjekkbokserklassekode()
+{
+    include("db.php"); // tilkobling til database
+    $sql = "SELECT * FROM klasse ORDER BY klassekode;";
+    $resultat = $conn->query($sql) or die("Ikke mulig å hente data fra databasen");
+
+    while ($rad = $resultat->fetch_assoc()) {
+        $klassekode = $rad["klassekode"];
+        $klassenavn = $rad["klassenavn"];
+        print("<input type='checkbox' name='klassekode[]' value='$klassekode'> $klassekode - $klassenavn<br>");
+    }
 }
 ?>
